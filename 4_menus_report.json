@@ -1,0 +1,73 @@
+{
+  "image": {
+    "path": "lists_full.png",
+    "width": 866,
+    "height": 2056
+  },
+  "level1_menus": [
+    {
+      "x": 664,
+      "y": 718,
+      "width": 72,
+      "height": 48,
+      "area": 3313,
+      "center_x": 700,
+      "center_y": 742,
+      "aspect_ratio": 1.5
+    },
+    {
+      "x": 664,
+      "y": 1777,
+      "width": 72,
+      "height": 48,
+      "area": 3312,
+      "center_x": 700,
+      "center_y": 1801,
+      "aspect_ratio": 1.5
+    },
+    {
+      "x": 664,
+      "y": 1967,
+      "width": 72,
+      "height": 48,
+      "area": 3313,
+      "center_x": 700,
+      "center_y": 1991,
+      "aspect_ratio": 1.5
+    }
+  ],
+  "level2_regions": [
+    {
+      "menu_number": 1,
+      "button_y": 742,
+      "button_x": 700,
+      "level2_y_start": 771,
+      "level2_y_end": 1772,
+      "level2_height": 1001,
+      "estimated_courses": 18
+    },
+    {
+      "menu_number": 2,
+      "button_y": 1801,
+      "button_x": 700,
+      "level2_y_start": 1830,
+      "level2_y_end": 1962,
+      "level2_height": 132,
+      "estimated_courses": 2
+    },
+    {
+      "menu_number": 3,
+      "button_y": 1991,
+      "button_x": 700,
+      "level2_y_start": 2020,
+      "level2_y_end": 2006,
+      "level2_height": -14,
+      "estimated_courses": 1
+    }
+  ],
+  "statistics": {
+    "total_level1_menus": 3,
+    "total_estimated_courses": 21,
+    "avg_region_height": 373
+  }
+}

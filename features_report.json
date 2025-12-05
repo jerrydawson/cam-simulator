@@ -1,0 +1,61 @@
+{
+  "image": {
+    "path": "lists_full.png",
+    "width": 866,
+    "height": 2056
+  },
+  "features": {
+    "colors": {
+      "红色": {
+        "pixels": 13703,
+        "percentage": 0.77
+      },
+      "橙色": {
+        "pixels": 7875,
+        "percentage": 0.44
+      },
+      "蓝色": {
+        "pixels": 77281,
+        "percentage": 4.34
+      }
+    },
+    "text_regions": {
+      "total": 276,
+      "lines": 24,
+      "avg_height": 19.5
+    },
+    "buttons": {
+      "total": 73,
+      "left": 26,
+      "center": 42,
+      "right": 5
+    },
+    "horizontal_lines": 29,
+    "list_structure": {
+      "avg_spacing": 69.1,
+      "estimated_items": 29
+    },
+    "layout": {
+      "width": 866,
+      "height": 2056,
+      "content_regions": 11
+    }
+  },
+  "recommendations": [
+    {
+      "type": "颜色识别",
+      "suggestion": "使用红色HSV范围([0,100,100]-[10,255,255])识别一级菜单按钮",
+      "confidence": "high"
+    },
+    {
+      "type": "OCR优化",
+      "suggestion": "文本高度约19.5px，建议OCR前预处理：缩放到统一高度30-40px",
+      "confidence": "medium"
+    },
+    {
+      "type": "按钮定位",
+      "suggestion": "右侧有5个按钮，建议优先在图片右侧区域查找菜单按钮",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "image": {
+    "path": "lists_full.png",
+    "width": 866,
+    "height": 2056
+  },
+  "level1_buttons": 3,
+  "level2_regions": [
+    {
+      "parent_button": 3,
+      "y_start": 771,
+      "y_end": 1772,
+      "height": 1001,
+      "estimated_items": 18
+    },
+    {
+      "parent_button": 2,
+      "y_start": 1830,
+      "y_end": 1963,
+      "height": 133,
+      "estimated_items": 2
+    }
+  ],
+  "level2_items": [],
+  "hours_text_positions": [
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 801,
+      "click_x": 200,
+      "click_y": 801
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 856,
+      "click_x": 200,
+      "click_y": 856
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 911,
+      "click_x": 200,
+      "click_y": 911
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 966,
+      "click_x": 200,
+      "click_y": 966
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1021,
+      "click_x": 200,
+      "click_y": 1021
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1076,
+      "click_x": 200,
+      "click_y": 1076
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1131,
+      "click_x": 200,
+      "click_y": 1131
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1186,
+      "click_x": 200,
+      "click_y": 1186
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1241,
+      "click_x": 200,
+      "click_y": 1241
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1296,
+      "click_x": 200,
+      "click_y": 1296
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1351,
+      "click_x": 200,
+      "click_y": 1351
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1406,
+      "click_x": 200,
+      "click_y": 1406
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1461,
+      "click_x": 200,
+      "click_y": 1461
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1516,
+      "click_x": 200,
+      "click_y": 1516
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1571,
+      "click_x": 200,
+      "click_y": 1571
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1626,
+      "click_x": 200,
+      "click_y": 1626
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1681,
+      "click_x": 200,
+      "click_y": 1681
+    },
+    {
+      "parent_menu": 3,
+      "estimated": true,
+      "x": 150,
+      "y": 1736,
+      "click_x": 200,
+      "click_y": 1736
+    },
+    {
+      "parent_menu": 2,
+      "estimated": true,
+      "x": 150,
+      "y": 1860,
+      "click_x": 200,
+      "click_y": 1860
+    },
+    {
+      "parent_menu": 2,
+      "estimated": true,
+      "x": 150,
+      "y": 1915,
+      "click_x": 200,
+      "click_y": 1915
+    }
+  ],
+  "statistics": {
+    "total_level2_items": 0,
+    "total_hours_detected": 20,
+    "avg_item_height": 0
+  },
+  "recommendations": [
+    {
+      "type": "二级菜单定位",
+      "suggestion": "二级菜单平均567px高，每个课程项约55px",
+      "confidence": "high"
+    },
+    {
+      "type": "学时文本位置",
+      "suggestion": "学时文本通常在X=150-250范围，建议先在此范围搜索",
+      "confidence": "medium"
+    },
+    {
+      "type": "点击策略",
+      "suggestion": "先点击一级菜单展开，等待0.5-1秒，然后在二级区域搜索学时文本",
+      "confidence": "high"
+    }
+  ]
+}

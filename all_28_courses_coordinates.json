@@ -1,0 +1,346 @@
+{
+  "menus": [
+    {
+      "menu_id": 1,
+      "y_start": 200,
+      "y_end": 639,
+      "height": 439,
+      "courses": [
+        {
+          "course_id": 1,
+          "click_x": 200,
+          "click_y": 230
+        },
+        {
+          "course_id": 2,
+          "click_x": 200,
+          "click_y": 285
+        },
+        {
+          "course_id": 3,
+          "click_x": 200,
+          "click_y": 340
+        },
+        {
+          "course_id": 4,
+          "click_x": 200,
+          "click_y": 395
+        },
+        {
+          "course_id": 5,
+          "click_x": 200,
+          "click_y": 450
+        },
+        {
+          "course_id": 6,
+          "click_x": 200,
+          "click_y": 505
+        },
+        {
+          "course_id": 7,
+          "click_x": 200,
+          "click_y": 560
+        }
+      ]
+    },
+    {
+      "menu_id": 2,
+      "y_start": 639,
+      "y_end": 1078,
+      "height": 439,
+      "courses": [
+        {
+          "course_id": 1,
+          "click_x": 200,
+          "click_y": 669
+        },
+        {
+          "course_id": 2,
+          "click_x": 200,
+          "click_y": 724
+        },
+        {
+          "course_id": 3,
+          "click_x": 200,
+          "click_y": 779
+        },
+        {
+          "course_id": 4,
+          "click_x": 200,
+          "click_y": 834
+        },
+        {
+          "course_id": 5,
+          "click_x": 200,
+          "click_y": 889
+        },
+        {
+          "course_id": 6,
+          "click_x": 200,
+          "click_y": 944
+        },
+        {
+          "course_id": 7,
+          "click_x": 200,
+          "click_y": 999
+        }
+      ]
+    },
+    {
+      "menu_id": 3,
+      "y_start": 1078,
+      "y_end": 1517,
+      "height": 439,
+      "courses": [
+        {
+          "course_id": 1,
+          "click_x": 200,
+          "click_y": 1108
+        },
+        {
+          "course_id": 2,
+          "click_x": 200,
+          "click_y": 1163
+        },
+        {
+          "course_id": 3,
+          "click_x": 200,
+          "click_y": 1218
+        },
+        {
+          "course_id": 4,
+          "click_x": 200,
+          "click_y": 1273
+        },
+        {
+          "course_id": 5,
+          "click_x": 200,
+          "click_y": 1328
+        },
+        {
+          "course_id": 6,
+          "click_x": 200,
+          "click_y": 1383
+        },
+        {
+          "course_id": 7,
+          "click_x": 200,
+          "click_y": 1438
+        }
+      ]
+    },
+    {
+      "menu_id": 4,
+      "y_start": 1517,
+      "y_end": 1956,
+      "height": 439,
+      "courses": [
+        {
+          "course_id": 1,
+          "click_x": 200,
+          "click_y": 1547
+        },
+        {
+          "course_id": 2,
+          "click_x": 200,
+          "click_y": 1602
+        },
+        {
+          "course_id": 3,
+          "click_x": 200,
+          "click_y": 1657
+        },
+        {
+          "course_id": 4,
+          "click_x": 200,
+          "click_y": 1712
+        },
+        {
+          "course_id": 5,
+          "click_x": 200,
+          "click_y": 1767
+        },
+        {
+          "course_id": 6,
+          "click_x": 200,
+          "click_y": 1822
+        },
+        {
+          "course_id": 7,
+          "click_x": 200,
+          "click_y": 1877
+        }
+      ]
+    }
+  ],
+  "all_coordinates": [
+    {
+      "menu": 1,
+      "course": 1,
+      "x": 200,
+      "y": 230
+    },
+    {
+      "menu": 1,
+      "course": 2,
+      "x": 200,
+      "y": 285
+    },
+    {
+      "menu": 1,
+      "course": 3,
+      "x": 200,
+      "y": 340
+    },
+    {
+      "menu": 1,
+      "course": 4,
+      "x": 200,
+      "y": 395
+    },
+    {
+      "menu": 1,
+      "course": 5,
+      "x": 200,
+      "y": 450
+    },
+    {
+      "menu": 1,
+      "course": 6,
+      "x": 200,
+      "y": 505
+    },
+    {
+      "menu": 1,
+      "course": 7,
+      "x": 200,
+      "y": 560
+    },
+    {
+      "menu": 2,
+      "course": 1,
+      "x": 200,
+      "y": 669
+    },
+    {
+      "menu": 2,
+      "course": 2,
+      "x": 200,
+      "y": 724
+    },
+    {
+      "menu": 2,
+      "course": 3,
+      "x": 200,
+      "y": 779
+    },
+    {
+      "menu": 2,
+      "course": 4,
+      "x": 200,
+      "y": 834
+    },
+    {
+      "menu": 2,
+      "course": 5,
+      "x": 200,
+      "y": 889
+    },
+    {
+      "menu": 2,
+      "course": 6,
+      "x": 200,
+      "y": 944
+    },
+    {
+      "menu": 2,
+      "course": 7,
+      "x": 200,
+      "y": 999
+    },
+    {
+      "menu": 3,
+      "course": 1,
+      "x": 200,
+      "y": 1108
+    },
+    {
+      "menu": 3,
+      "course": 2,
+      "x": 200,
+      "y": 1163
+    },
+    {
+      "menu": 3,
+      "course": 3,
+      "x": 200,
+      "y": 1218
+    },
+    {
+      "menu": 3,
+      "course": 4,
+      "x": 200,
+      "y": 1273
+    },
+    {
+      "menu": 3,
+      "course": 5,
+      "x": 200,
+      "y": 1328
+    },
+    {
+      "menu": 3,
+      "course": 6,
+      "x": 200,
+      "y": 1383
+    },
+    {
+      "menu": 3,
+      "course": 7,
+      "x": 200,
+      "y": 1438
+    },
+    {
+      "menu": 4,
+      "course": 1,
+      "x": 200,
+      "y": 1547
+    },
+    {
+      "menu": 4,
+      "course": 2,
+      "x": 200,
+      "y": 1602
+    },
+    {
+      "menu": 4,
+      "course": 3,
+      "x": 200,
+      "y": 1657
+    },
+    {
+      "menu": 4,
+      "course": 4,
+      "x": 200,
+      "y": 1712
+    },
+    {
+      "menu": 4,
+      "course": 5,
+      "x": 200,
+      "y": 1767
+    },
+    {
+      "menu": 4,
+      "course": 6,
+      "x": 200,
+      "y": 1822
+    },
+    {
+      "menu": 4,
+      "course": 7,
+      "x": 200,
+      "y": 1877
+    }
+  ]
+}
