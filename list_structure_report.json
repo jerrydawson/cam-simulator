@@ -1,0 +1,87 @@
+{
+  "image": {
+    "path": "lists.png",
+    "width": 837,
+    "height": 970
+  },
+  "list_items": [
+    {
+      "index": 1,
+      "y_start": 0,
+      "y_end": 111,
+      "height": 111,
+      "center_y": 55
+    },
+    {
+      "index": 2,
+      "y_start": 116,
+      "y_end": 184,
+      "height": 68,
+      "center_y": 150
+    },
+    {
+      "index": 3,
+      "y_start": 186,
+      "y_end": 966,
+      "height": 780,
+      "center_y": 576
+    }
+  ],
+  "buttons": [
+    {
+      "x": 629,
+      "y": 247,
+      "width": 73,
+      "height": 48,
+      "center_x": 665,
+      "center_y": 271,
+      "color": "红色",
+      "area": 3357.0
+    },
+    {
+      "x": 629,
+      "y": 437,
+      "width": 73,
+      "height": 48,
+      "center_x": 665,
+      "center_y": 461,
+      "color": "红色",
+      "area": 3346.0
+    },
+    {
+      "x": 629,
+      "y": 627,
+      "width": 73,
+      "height": 48,
+      "center_x": 665,
+      "center_y": 651,
+      "color": "红色",
+      "area": 3357.0
+    },
+    {
+      "x": 629,
+      "y": 817,
+      "width": 73,
+      "height": 49,
+      "center_x": 665,
+      "center_y": 841,
+      "color": "红色",
+      "area": 3418.0
+    },
+    {
+      "x": 0,
+      "y": 907,
+      "width": 837,
+      "height": 63,
+      "center_x": 418,
+      "center_y": 938,
+      "color": "橙色",
+      "area": 1811.0
+    }
+  ],
+  "summary": {
+    "total_list_items": 3,
+    "total_buttons": 5,
+    "total_text_regions": 544
+  }
+}

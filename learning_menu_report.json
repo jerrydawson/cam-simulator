@@ -1,0 +1,111 @@
+{
+  "image": {
+    "path": "lists.png",
+    "width": 837,
+    "height": 970
+  },
+  "level1_menus": [
+    {
+      "menu_id": 1,
+      "x": 630,
+      "y": 247,
+      "width": 71,
+      "height": 48,
+      "click_x": 665,
+      "click_y": 271
+    },
+    {
+      "menu_id": 2,
+      "x": 630,
+      "y": 438,
+      "width": 71,
+      "height": 46,
+      "click_x": 665,
+      "click_y": 461
+    },
+    {
+      "menu_id": 3,
+      "x": 630,
+      "y": 627,
+      "width": 71,
+      "height": 48,
+      "click_x": 665,
+      "click_y": 651
+    },
+    {
+      "menu_id": 4,
+      "x": 630,
+      "y": 818,
+      "width": 71,
+      "height": 47,
+      "click_x": 665,
+      "click_y": 841
+    }
+  ],
+  "level2_items": [
+    {
+      "parent_menu": 1,
+      "item_id": 1,
+      "estimated_x": 50,
+      "estimated_y": 315,
+      "click_x": 200,
+      "click_y": 330,
+      "note": "Click L1 menu first to see this item"
+    },
+    {
+      "parent_menu": 1,
+      "item_id": 2,
+      "estimated_x": 50,
+      "estimated_y": 360,
+      "click_x": 200,
+      "click_y": 375,
+      "note": "Click L1 menu first to see this item"
+    },
+    {
+      "parent_menu": 2,
+      "item_id": 1,
+      "estimated_x": 50,
+      "estimated_y": 504,
+      "click_x": 200,
+      "click_y": 519,
+      "note": "Click L1 menu first to see this item"
+    },
+    {
+      "parent_menu": 2,
+      "item_id": 2,
+      "estimated_x": 50,
+      "estimated_y": 549,
+      "click_x": 200,
+      "click_y": 564,
+      "note": "Click L1 menu first to see this item"
+    },
+    {
+      "parent_menu": 3,
+      "item_id": 1,
+      "estimated_x": 50,
+      "estimated_y": 695,
+      "click_x": 200,
+      "click_y": 710,
+      "note": "Click L1 menu first to see this item"
+    },
+    {
+      "parent_menu": 3,
+      "item_id": 2,
+      "estimated_x": 50,
+      "estimated_y": 740,
+      "click_x": 200,
+      "click_y": 755,
+      "note": "Click L1 menu first to see this item"
+    }
+  ],
+  "summary": {
+    "total_level1_menus": 4,
+    "total_level2_items_estimated": 6
+  },
+  "instructions": {
+    "step1": "点击一级菜单（红色按钮）展开二级菜单",
+    "step2": "在二级菜单中查找 \"x.x/x.x学时\" 格式的文本",
+    "step3": "如果\"/\"左右数字不相等，点击该文本开始播放",
+    "step4": "重复以上步骤处理所有菜单"
+  }
+}
