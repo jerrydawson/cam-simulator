@@ -58,12 +58,46 @@ class AutoLearningBot:
         with open(self.log_file, 'a', encoding='utf-8') as f:
             f.write(log_msg + '\n')
     
+    def find_window_by_title(self, window_title="课程详情"):
+        """通过窗口标题查找窗口"""
+        self.log(f"正在查找窗口: '{window_title}'...")
+        
+        try:
+            # 尝试导入平台特定的窗口查找库
+            try:
+                import pygetwindow as gw
+                windows = gw.getWindowsWithTitle(window_title)
+                
+                if windows:
+                    win = windows[0]
+                    self.window_offset_x = win.left
+                    self.window_offset_y = win.top
+                    self.log(f"✅ 找到窗口 '{window_title}': ({self.window_offset_x}, {self.window_offset_y})")
+                    self.log(f"   窗口尺寸: {win.width}x{win.height}")
+                    return True
+                else:
+                    self.log(f"⚠️  未找到标题为 '{window_title}' 的窗口")
+                    return False
+                    
+            except ImportError:
+                self.log("⚠️  pygetwindow未安装，尝试其他方法...")
+                return False
+                
+        except Exception as e:
+            self.log(f"❌ 通过标题查找窗口失败: {e}")
+            return False
+    
     def find_window(self):
         """在屏幕上查找课程列表窗口"""
         self.log("正在查找课程列表窗口...")
         
+        # 方法1：通过窗口标题查找（最准确）
+        if self.find_window_by_title("课程详情"):
+            return True
+        
+        # 方法2：通过图片识别
         try:
-            # 尝试在屏幕上定位基准图片
+            self.log("尝试通过图片识别查找窗口...")
             location = pyautogui.locateOnScreen(self.base_image, confidence=0.6)
             
             if location:
@@ -71,20 +105,22 @@ class AutoLearningBot:
                 self.window_offset_y = location.top
                 self.log(f"✅ 找到窗口位置: ({self.window_offset_x}, {self.window_offset_y})")
                 return True
-            else:
-                self.log("❌ 未找到窗口，尝试备用方法...")
-                # 备用：让用户手动点击
-                self.log("请将鼠标移动到课程列表左上角，5秒后自动记录位置...")
-                time.sleep(5)
-                pos = pyautogui.position()
-                self.window_offset_x = pos[0]
-                self.window_offset_y = pos[1]
-                self.log(f"✅ 手动设置窗口位置: ({self.window_offset_x}, {self.window_offset_y})")
-                return True
-                
         except Exception as e:
-            self.log(f"❌ 查找窗口失败: {e}")
-            return False
+            self.log(f"图片识别失败: {e}")
+        
+        # 方法3：手动指定（备用）
+        self.log("❌ 自动查找失败，使用手动方法...")
+        self.log("请将鼠标移动到'课程详情'窗口的左上角，5秒后自动记录位置...")
+        
+        for i in range(5, 0, -1):
+            print(f"   {i}秒...", end='\r', flush=True)
+            time.sleep(1)
+        
+        pos = pyautogui.position()
+        self.window_offset_x = pos[0]
+        self.window_offset_y = pos[1]
+        self.log(f"✅ 手动设置窗口位置: ({self.window_offset_x}, {self.window_offset_y})")
+        return True
     
     def click_point(self, x, y, duration=0.3, delay=0.5):
         """点击指定位置"""
