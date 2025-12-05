@@ -76,25 +76,38 @@ GUI界面提供：
 
 #### 命令行版本
 
-基本用法：
+**基本用法（等待模式 - 推荐）：**
 ```bash
 python virtual_camera.py video.mp4
 ```
+- 程序启动后会显示"虚拟摄像头已就绪"的待机画面
+- 打开Zoom/Teams等应用，选择虚拟摄像头
+- 在命令行窗口按 **Enter键** 开始播放视频
 
-自定义参数：
+**立即播放模式（禁用等待）：**
+```bash
+python virtual_camera.py video.mp4 --no-wait
+```
+- 程序启动后立即播放视频（无待机画面）
+
+**自定义参数：**
 ```bash
 # 指定分辨率和帧率
 python virtual_camera.py video.mp4 --width 1920 --height 1080 --fps 60
 
 # 较低配置（节省CPU）
 python virtual_camera.py video.mp4 --width 640 --height 480 --fps 15
+
+# 立即播放，无等待
+python virtual_camera.py video.mp4 --no-wait
 ```
 
-参数说明：
+**参数说明：**
 - `video`: 视频文件路径（必需）
 - `--width`: 输出宽度（默认1280）
 - `--height`: 输出高度（默认720）
 - `--fps`: 输出帧率（默认30）
+- `--no-wait`: 禁用等待模式，立即播放
 
 ### 4. 在应用程序中使用虚拟摄像头
 
@@ -128,11 +141,16 @@ python virtual_camera.py video.mp4 --width 640 --height 480 --fps 15
 ### 场景1：在线会议播放PPT讲解视频
 
 ```bash
-# 录制好讲解视频后
+# 1. 启动虚拟摄像头（等待模式）
 python virtual_camera.py presentation.mp4 --width 1920 --height 1080
+
+# 2. 打开会议软件，选择虚拟摄像头
+#    此时会显示"虚拟摄像头已就绪"的待机画面
+
+# 3. 准备好开始演讲时，按Enter键开始播放视频
 ```
 
-在会议软件中选择虚拟摄像头，即可播放你的讲解视频。
+**优点：** 可以在正式开始前先调试好摄像头设置，避免一启动就播放导致的尴尬。
 
 ### 场景2：游戏直播/演示
 

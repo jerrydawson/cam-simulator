@@ -27,6 +27,7 @@ class VirtualCameraGUI:
         self.camera_thread = None
         self.cap = None
         self.stop_flag = False
+        self.playing = False  # 是否正在播放视频
         
         self.setup_ui()
         
@@ -95,6 +96,11 @@ class VirtualCameraGUI:
                                     command=self.start_camera, 
                                     style="Accent.TButton")
         self.start_btn.pack(side=tk.LEFT, padx=5, fill=tk.X, expand=True)
+        
+        self.play_btn = ttk.Button(control_frame, text="开始播放", 
+                                   command=self.start_playing,
+                                   state=tk.DISABLED)
+        self.play_btn.pack(side=tk.LEFT, padx=5, fill=tk.X, expand=True)
         
         self.stop_btn = ttk.Button(control_frame, text="停止", 
                                    command=self.stop_camera,
@@ -166,7 +172,9 @@ class VirtualCameraGUI:
         
         self.is_running = True
         self.stop_flag = False
+        self.playing = False
         self.start_btn.config(state=tk.DISABLED)
+        self.play_btn.config(state=tk.NORMAL)
         self.stop_btn.config(state=tk.NORMAL)
         
         self.log("正在启动虚拟摄像头...")
@@ -179,18 +187,67 @@ class VirtualCameraGUI:
         )
         self.camera_thread.start()
     
+    def start_playing(self):
+        """开始播放视频"""
+        if self.is_running and not self.playing:
+            self.playing = True
+            self.play_btn.config(state=tk.DISABLED)
+            self.log("=== 开始播放视频 ===")
+    
     def stop_camera(self):
         """停止虚拟摄像头"""
         self.log("正在停止虚拟摄像头...")
         self.stop_flag = True
         self.is_running = False
+        self.playing = False
         
         if self.cap:
             self.cap.release()
         
         self.start_btn.config(state=tk.NORMAL)
+        self.play_btn.config(state=tk.DISABLED)
         self.stop_btn.config(state=tk.DISABLED)
         self.log("虚拟摄像头已停止")
+    
+    def create_standby_frame(self, width, height):
+        """创建待机画面"""
+        frame = np.zeros((height, width, 3), dtype=np.uint8)
+        # 设置深色背景
+        frame[:, :] = (30, 30, 30)
+        
+        # 添加文字
+        texts = [
+            ("虚拟摄像头已就绪", (255, 255, 255), 2.0 if width >= 1280 else 1.2, -120),
+            ("等待开始播放...", (200, 200, 200), 1.2 if width >= 1280 else 0.8, -40),
+        ]
+        
+        for text, color, scale, y_offset in texts:
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            thickness = int(scale * 2)
+            
+            # 获取文字大小
+            (text_width, text_height), _ = cv2.getTextSize(text, font, scale, thickness)
+            
+            # 计算居中位置
+            x = (width - text_width) // 2
+            y = (height // 2) + y_offset
+            
+            # 添加阴影
+            cv2.putText(frame, text, (x + 3, y + 3), font, scale, (0, 0, 0), thickness)
+            # 添加主文字
+            cv2.putText(frame, text, (x, y), font, scale, color, thickness)
+        
+        # 添加提示信息
+        hint_text = "在GUI中点击 '开始播放' 按钮"
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        scale = 0.7 if width >= 1280 else 0.5
+        thickness = 1
+        (text_width, text_height), _ = cv2.getTextSize(hint_text, font, scale, thickness)
+        x = (width - text_width) // 2
+        y = height - 50
+        cv2.putText(frame, hint_text, (x, y), font, scale, (150, 150, 150), thickness)
+        
+        return frame
     
     def run_camera(self, width, height, fps):
         """运行虚拟摄像头（在独立线程中）"""
@@ -201,14 +258,24 @@ class VirtualCameraGUI:
                                      fps=fps, fmt=pyvirtualcam.PixelFormat.BGR) as cam:
                 self.log(f"虚拟摄像头已启动: {cam.device}")
                 self.log(f"输出: {width}x{height} @ {fps} FPS")
-                self.log("正在播放视频...")
+                self.log("=== 待机模式 ===")
+                self.log("虚拟摄像头已就绪，显示待机画面")
+                self.log("点击 '开始播放' 按钮开始播放视频")
                 
                 frame_time = 1.0 / fps
                 frame_count = 0
+                standby_frame = self.create_standby_frame(width, height)
                 
                 while not self.stop_flag:
                     start_time = time.time()
                     
+                    # 如果还未开始播放，显示待机画面
+                    if not self.playing:
+                        cam.send(standby_frame)
+                        cam.sleep_until_next_frame()
+                        continue
+                    
+                    # 开始播放视频
                     ret, frame = self.cap.read()
                     
                     if not ret:

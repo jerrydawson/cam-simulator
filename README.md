@@ -6,6 +6,7 @@
 
 - ✅ 模拟真实摄像头设备
 - ✅ 支持常见视频格式（MP4, AVI, MOV等）
+- ✅ **待机模式** - 启动后显示待机画面，等待用户手动开始播放
 - ✅ 自动循环播放
 - ✅ 可自定义分辨率和帧率
 - ✅ 兼容所有调用摄像头的应用程序（Zoom, Teams, Skype等）
@@ -40,17 +41,25 @@ pip install opencv-python pyvirtualcam numpy
 
 ## 使用方法
 
-### 基本使用
+### 基本使用（默认：等待模式）
 
 ```bash
+# 启动后显示待机画面，按Enter开始播放
 python virtual_camera.py video.mp4
 ```
+
+程序会先显示待机画面，等待你：
+1. 打开Zoom/Teams等应用，选择虚拟摄像头
+2. 在命令行窗口按 **Enter键** 开始播放视频
 
 ### 自定义参数
 
 ```bash
 # 指定分辨率和帧率
 python virtual_camera.py video.mp4 --width 1920 --height 1080 --fps 60
+
+# 禁用等待模式，立即播放（旧行为）
+python virtual_camera.py video.mp4 --no-wait
 
 # 播放不同视频
 python virtual_camera.py demo.avi --fps 30
@@ -62,21 +71,27 @@ python virtual_camera.py demo.avi --fps 30
 - `--width`: 输出宽度（默认: 1280）
 - `--height`: 输出高度（默认: 720）
 - `--fps`: 输出帧率（默认: 30）
+- `--no-wait`: 禁用等待模式，立即播放视频
 
 ## 使用示例
 
-### 示例1：在会议软件中使用
+### 示例1：在会议软件中使用（推荐流程）
 
-1. 运行虚拟摄像头程序：
+1. 运行虚拟摄像头程序（待机模式）：
    ```bash
    python virtual_camera.py my_video.mp4
    ```
+   此时会显示"虚拟摄像头已就绪"的待机画面
 
 2. 打开会议软件（Zoom/Teams/Skype等）
 
 3. 在摄像头设置中选择 "OBS Virtual Camera"
+   - 此时会议中会看到待机画面，而不是直接播放视频
 
-4. 会议中将显示你的视频内容
+4. **准备好后**，在命令行窗口按 **Enter键** 开始播放视频
+   - 或在GUI版本中点击"开始播放"按钮
+
+5. 会议中将显示你的视频内容
 
 ### 示例2：测试虚拟摄像头
 
